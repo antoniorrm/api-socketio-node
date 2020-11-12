@@ -1,1 +1,1 @@
-# api-socketio-node
+# Api em nodejs utilizando o socketio para emitir mensagem para determinado canal
