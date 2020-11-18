@@ -13,9 +13,9 @@ app.use(routes);
 const server = new http.Server(app);  
 export const io = new socket.Server(server);
 io.on('connection', async (res: { id: any; on: (arg0: string, arg1: () => void) => void; }) => {
-    console.log(res.id)
+    console.log(res.id + "connected")
     res.on('disconnect', () => {
-        console.log("Deu ruim")
+        console.log(res.id + "disconnected")
       });
   });
 
