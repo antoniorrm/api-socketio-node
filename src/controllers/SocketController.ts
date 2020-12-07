@@ -7,11 +7,11 @@ export default {
         const {
             data,
         } = request.body;
-
-        const {channel} = request.params;
-        console.log(channel);
         
-        io.emit(channel, data)
+        const {channel} = request.params;
+        console.log(channel, data);
+        
+        io.to(channel).emit(channel, data)
 
         return response.status(201).json({data, channel});
     }
